@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyProgressBar">
+        <attr name="progress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="background_color" format="color" />
+        <attr name="progress_color" format="color" />
+        <attr name="progress_end_color" format="color" />
+        <attr name="secondary_progress_color" format="color" />
+        <attr name="stroke_width" format="dimension" />
+        <attr name="paint_style" format="enum">
+            <enum name="stroke" value="0x0"></enum>
+            <enum name="fill" value="0x1"></enum>
+        </attr>
+
+        <attr name="start_location" format="enum">
+            <enum name="top" value="0x0" />
+            <enum name="right" value="0x1" />
+            <enum name="bottom" value="0x2" />
+            <enum name="left" value="0x3" />
+        </attr>
+    </declare-styleable>
+</resources>
