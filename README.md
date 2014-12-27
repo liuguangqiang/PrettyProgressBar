@@ -21,15 +21,15 @@ It is a awesome progress bar.You can change all of the style.Such as background 
 ####Gradle
 ```groovy
 dependencies {
-   compile 'com.github.liuguangqiang:progressbar:0.1.0'
+   compile 'com.github.liuguangqiang.prettyprogressbar:library:0.1.0'
 }
 ```
 
 ####Maven
 ```xml
 <dependency>
-    <groupId>com.github.liuguangqiang</groupId>
-    <artifactId>progressbar</artifactId>
+    <groupId>com.github.liuguangqiang.prettyprogressbar</groupId>
+    <artifactId>library</artifactId>
     <version>0.1.1</version>
     <type>apklib</type>
 </dependency>
