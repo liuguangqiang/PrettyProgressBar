@@ -14,9 +14,24 @@ It is a awesome progress bar.You can change all of the style.Such as background 
 
 ###Screenshot
 
-![image](images/screenshot.gif)
+![image](images/screenshot_circle.gif)
 
-###Quick Start
+###Sample
+```xml
+    <com.liuguangqiang.progressbar.CircleProgressBar
+        android:id="@+id/progressbar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+```
+
+```java
+CircleProgressBar progressBar1 = (CircleProgressBar) this.findViewById(R.id.progressbar1);
+progressBar1.setProgress(10);
+```
+
+---
+
+###Dependencies
 
 ####Gradle
 ```groovy
@@ -31,6 +46,6 @@ dependencies {
     <groupId>com.github.liuguangqiang.prettyprogressbar</groupId>
     <artifactId>library</artifactId>
     <version>0.1.1</version>
-    <type>apklib</type>
+    <type>aar</type>
 </dependency>
 ```

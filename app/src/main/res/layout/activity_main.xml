@@ -12,14 +12,14 @@
     tools:context=".MainActivity">
 
     <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/arc_progressbar1"
+        android:id="@+id/progressbar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         pb:background_color="@android:color/background_light" />
 
 
     <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/arc_progressbar3"
+        android:id="@+id/progressbar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -27,7 +27,7 @@
         pb:start_location="left" />
 
     <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/arc_progressbar2"
+        android:id="@+id/progressbar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -38,7 +38,7 @@
         pb:stroke_width="20dp" />
 
     <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/arc_progressbar4"
+        android:id="@+id/progressbar4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

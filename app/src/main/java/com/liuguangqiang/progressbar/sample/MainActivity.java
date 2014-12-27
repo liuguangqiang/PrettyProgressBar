@@ -16,10 +16,10 @@ public class MainActivity extends ActionBarActivity {
     private int progress = 0;
     private Timer mTimer;
 
-    private CircleProgressBar arcProgressBar1;
-    private CircleProgressBar arcProgressBar2;
-    private CircleProgressBar arcProgressBar3;
-    private CircleProgressBar arcProgressBar4;
+    private CircleProgressBar progressBar1;
+    private CircleProgressBar progressBar2;
+    private CircleProgressBar progressBar3;
+    private CircleProgressBar progressBar4;
 
     private Button btnTest;
 
@@ -27,10 +27,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        arcProgressBar1 = (CircleProgressBar) this.findViewById(R.id.arc_progressbar1);
-        arcProgressBar2 = (CircleProgressBar) this.findViewById(R.id.arc_progressbar2);
-        arcProgressBar3 = (CircleProgressBar) this.findViewById(R.id.arc_progressbar3);
-        arcProgressBar4 = (CircleProgressBar) this.findViewById(R.id.arc_progressbar4);
+        progressBar1 = (CircleProgressBar) this.findViewById(R.id.progressbar1);
+        progressBar2 = (CircleProgressBar) this.findViewById(R.id.progressbar2);
+        progressBar3 = (CircleProgressBar) this.findViewById(R.id.progressbar3);
+        progressBar4 = (CircleProgressBar) this.findViewById(R.id.progressbar4);
 
         btnTest = (Button) this.findViewById(R.id.btn_start);
         btnTest.setOnClickListener(new View.OnClickListener() {
@@ -51,11 +51,11 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void run() {
                         progress++;
-                        if (progress <= arcProgressBar1.getMax()) {
-                            arcProgressBar1.setProgress(progress);
-                            arcProgressBar2.setProgress(progress);
-                            arcProgressBar3.setProgress(progress);
-                            arcProgressBar4.setProgress(progress);
+                        if (progress <= progressBar1.getMax()) {
+                            progressBar1.setProgress(progress);
+                            progressBar2.setProgress(progress);
+                            progressBar3.setProgress(progress);
+                            progressBar4.setProgress(progress);
                         }
                     }
                 });
