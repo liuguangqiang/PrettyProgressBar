@@ -3,7 +3,9 @@ PrettyProgressBar
 
 PrettyProgressBar is a collection that contains a lot of progress bar.
 
-#CircleProgressBar
+----
+
+##CircleProgressBar
 
 The first progressbar is CircleProgressBar.
 
@@ -11,22 +13,20 @@ It is a awesome progress bar.You can change all of the style.Such as background 
 
 If you have a new idea or a issue ,you can contribute to me.
 
-----
-
-##Screenshot
+###Screenshot
 
 ![image](images/screenshot.gif)
 
-##Quick Start
+###Quick Start
 
-###Gradle
+####Gradle
 ```groovy
 dependencies {
    compile 'com.github.liuguangqiang:progressbar:0.1.0'
 }
 ```
 
-###Maven
+####Maven
 ```xml
 <dependency>
     <groupId>com.github.liuguangqiang</groupId>
