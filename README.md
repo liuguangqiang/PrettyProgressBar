@@ -36,7 +36,7 @@ circlePb.setProgress(10);
 ###Gradle
 ```
 dependencies {
-   compile 'com.github.liuguangqiang.prettyprogressbar:library:0.1.0'
+   compile 'com.github.liuguangqiang.prettyprogressbar:library:0.2.0'
 }
 ```
 
@@ -45,7 +45,7 @@ dependencies {
 <dependency>
     <groupId>com.github.liuguangqiang.prettyprogressbar</groupId>
     <artifactId>library</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <type>aar</type>
 </dependency>
 ```
