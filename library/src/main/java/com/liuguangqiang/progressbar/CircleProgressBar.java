@@ -1,5 +1,24 @@
+/*
+ *
+ *  * Copyright 2014-2015 Eric Liu
+ *  *
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *     http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *
+ */
+
 package com.liuguangqiang.progressbar;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -8,6 +27,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 
 import com.liuguangqiang.arcprogressbar.R;
 
@@ -50,11 +70,7 @@ public class CircleProgressBar extends View {
     private int mProgress;
     private PaintStyle mPaintStyle;
 
-    private int startAngle = 0;
-
-    private int endAngle = 360;
-
-    private int progressSweepAngle = 0;
+    private static final int END_ANGLE = 360;
 
     private Paint mProgressPaint;
     private Paint mProgressBgPaint;
@@ -111,7 +127,7 @@ public class CircleProgressBar extends View {
         mMax = attributes.getInt(R.styleable.MyProgressBar_max, DEFAULT_MAX);
         mProgress = attributes.getInt(R.styleable.MyProgressBar_progress, 0);
 
-        DEFAULT_STROKE_WIDTH = dp2px(DEFAULT_STROKE_WIDTH);
+        DEFAULT_STROKE_WIDTH = DisplayUtils.dp2px(getContext(), DEFAULT_STROKE_WIDTH);
         mStrokeWith = attributes.getDimension(R.styleable.MyProgressBar_stroke_width, DEFAULT_STROKE_WIDTH);
 
         int paintStyle = attributes.getInt(R.styleable.MyProgressBar_paint_style, DEFAULT_PAINT_STYLE.ordinal());
@@ -131,7 +147,7 @@ public class CircleProgressBar extends View {
         if (mode == MeasureSpec.EXACTLY) {
             result = size;
         } else {
-            result = (int) dp2px(DEFAULT_SIZE);
+            result = (int) DisplayUtils.dp2px(getContext(), DEFAULT_SIZE);
         }
         return result;
     }
@@ -150,7 +166,6 @@ public class CircleProgressBar extends View {
         //Progress Background
         mProgressBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mProgressBgPaint.setColor(mProgressBackgroundColor);
-
 
         if (mPaintStyle == PaintStyle.STROKE) {
             mProgressPaint.setStyle(Paint.Style.STROKE);
@@ -174,7 +189,7 @@ public class CircleProgressBar extends View {
         mProgressBgRectF.top = getPaddingTop() + getStrokeOffset();
         mProgressBgRectF.right = getWidth() - getPaddingLeft() - getPaddingRight() - getStrokeOffset();
         mProgressBgRectF.bottom = getHeight() - getStrokeOffset();
-        canvas.drawArc(mProgressBgRectF, startAngle, endAngle, getUseCenter(), mProgressBgPaint);
+        canvas.drawArc(mProgressBgRectF, getStartAngle(), END_ANGLE, getUseCenter(), mProgressBgPaint);
     }
 
     private boolean getUseCenter() {
@@ -190,6 +205,23 @@ public class CircleProgressBar extends View {
         if (mProgressEndColor != 0)
             onProgressChanged();
         invalidate();
+    }
+
+    public void setProgressWithAnim(int progress, long duration) {
+        setProgressWithAnim(0, progress, duration);
+    }
+
+    public void setProgressWithAnim(int fromProgress, int toProgress, long duration) {
+        ValueAnimator animator = ValueAnimator.ofInt(fromProgress, toProgress);
+        animator.setDuration(duration);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                setProgress((int) animation.getAnimatedValue());
+            }
+        });
+        animator.setInterpolator(new LinearInterpolator());
+        animator.start();
     }
 
     private int getSweepAngel() {
@@ -208,11 +240,6 @@ public class CircleProgressBar extends View {
                 return 270;
         }
         return 0;
-    }
-
-    private float dp2px(float dp) {
-        final float scale = getResources().getDisplayMetrics().density;
-        return dp * scale + 0.5f;
     }
 
     private void onProgressChanged() {
