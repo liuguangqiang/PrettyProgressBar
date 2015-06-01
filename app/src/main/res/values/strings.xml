@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CircleProgressBar</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">PrettyProgressBar</string>
     <string name="action_settings">Settings</string>
+    <string name="circle_progressbar">Circle ProgressBar</string>
+    <string name="square_progressbar">Square ProgressBar</string>
+    <string name="title_activity_square_progress_bar_sample">SquareProgressBarSample</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

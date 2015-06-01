@@ -11,47 +11,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/progressbar1"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn_circle_progressbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        pb:background_color="@android:color/background_light" />
-
-
-    <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/progressbar3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        pb:paint_style="fill"
-        pb:start_location="left" />
-
-    <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/progressbar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        pb:background_color="@android:color/background_light"
-        pb:progress_color="@android:color/holo_green_light"
-        pb:progress_end_color="@android:color/holo_red_dark"
-        pb:start_location="right"
-        pb:stroke_width="20dp" />
-
-    <com.liuguangqiang.progressbar.CircleProgressBar
-        android:id="@+id/progressbar4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        pb:paint_style="fill"
-        pb:progress_color="@android:color/background_light"
-        pb:progress_end_color="@android:color/holo_red_dark"
-        pb:start_location="right"
-        pb:stroke_width="20dp" />
+        android:text="@string/circle_progressbar" />
 
     <Button
-        android:id="@+id/btn_start"
-        android:layout_width="100dp"
+        android:id="@+id/btn_square_progressbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp" />
+        android:text="@string/square_progressbar" />
 
 </LinearLayout>
